@@ -20,7 +20,7 @@ try:
         OP = team.find_all('td')[2].text
         TP = team.find_all('td')[3].text
         team_list.append([team.find('h2').text, RF, OP, TP])
-    Team_tb = pd.DataFrame(team_list, columns=title_list, index = [x for x in range(1,len(team_list)+1)])
+    Team_tb = pd.DataFrame(team_list, columns=title_list, index=[x for x in range(1, len(team_list)+1)])
     Team_tb.to_csv('Team.csv')
     print(Team_tb)
 
@@ -41,9 +41,8 @@ try:
         p_type = rows_data[2].text
         price = rows_data[3].text.replace("₹", "")
         top_buy_list.append([team, player, p_type, price])
-    Top_buy_tb = pd.DataFrame(top_buy_list, columns=title_list,index=[x for x in range(1,len(top_buy_list)+1)])
+    Top_buy_tb = pd.DataFrame(top_buy_list, columns=title_list, index=[x for x in range(1, len(top_buy_list)+1)])
     Top_buy_tb.to_csv('Top_Buy.csv')
 
 except Exception as Error:
     print(Error)
-
